@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile 
     command: npm run dev
     volumes:
-      - $PWD:/usr/app/
+      - $PWD/nodejs:/usr/app/
       - /usr/app/node_modules
     ports:
       - "80:3000"
