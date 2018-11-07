@@ -27,6 +27,7 @@ pipeline {
                  stage('Create DB Volume') {
                           steps {
                               sh 'docker volume create pgdata'
+                              sh 'docker volume create app'
                           }
                   }
 
