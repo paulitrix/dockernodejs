@@ -26,6 +26,7 @@ pipeline {
 
                  stage('Stack Deploy') {
                           steps {
+                              sh 'docker volume create pgdata'
                               sh 'docker-compose up'
                               sh 'docker service ls'
                               sh 'docker container ls -q'
