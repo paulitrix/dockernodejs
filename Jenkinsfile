@@ -37,7 +37,7 @@ pipeline {
 
         post {
                 always {
-			sh "docker-compose  -f docker-compose.yml up -d --no-deps --build"
+			sh "docker-compose  -f $PWD/docker-compose.yml up -d --no-deps --build"
                         sh "docker service ls"
                         sh "docker container ls -q"
                         sh "echo Done!"
