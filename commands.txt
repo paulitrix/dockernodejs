@@ -1,7 +1,0 @@
-docker-compose  up -d --no-deps --build
-docker container prune
-docker service rm web 
-docker exec -it web bash 
-docker run -u root --rm -d  -p 8080:8080 -p 50000:50000 -v $PWD/jenkins:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean
-docker volume create pgdata
-docker-compose up -d --force-recreate --build
