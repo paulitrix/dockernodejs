@@ -38,7 +38,7 @@ pipeline {
         post {
                 always {
 			sh 'pwd'
-			sh "docker-compose up -c /home/ec2-user/Docker/jenkins/workspace/Docker-node-postgres/docker-compose.yml -d --no-deps --build"
+			sh "docker-compose -f $JENKINS_HOME/workspace/Docker-node-postgres/docker-compose.yml up -d --no-deps --build"
                         sh "docker service ls"
                         sh "docker container ls -q"
                         sh "echo Done!"
