@@ -24,13 +24,9 @@ pipeline {
                          }
                  }
 
-                 stage('Stack Deploy') {
+                 stage('Create DB Volume') {
                           steps {
                               sh 'docker volume create pgdata'
-                              sh '/usr/local/bin/docker-compose up'
-                              sh 'docker service ls'
-                              sh 'docker container ls -q'
-
                           }
                   }
 
@@ -39,6 +35,9 @@ pipeline {
 
         post {
                 always {
+			sh "docker-compose up"
+                        sh "docker service ls"
+                        sh "docker container ls -q"
                         sh "echo Done!"
 
                  }
