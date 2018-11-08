@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-          DEPLOY_URL = "https://54.196.235.168/"
+          DEPLOY_URL = "https://example.com/"
           COMPOSE_FILE = "docker-compose.yml"
           DEPLOY_STACK_NAME = "hello"
           STACK_PREFIX = "web"
